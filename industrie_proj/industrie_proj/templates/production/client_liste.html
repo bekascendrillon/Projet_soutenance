@@ -1,0 +1,35 @@
+{% extends 'production/layout.html' %}
+
+						{% block content %}
+							<center><h1><big><i>Liste des Clients...</i></big></h1></center>
+                           <div > <a href="{% url 'ajout-client' %}"><button type="button" class="btn btn-info">Ajouter</button></a></div>
+                        <br>
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Nom</th>
+									  <th>Prenom</th>
+									  <th>Adresse</th>
+                                      <th>Telephone</th>
+                                      <th>Modification</th>
+                                      <th>Suppression</th>
+									  <th>Details</th>
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for client  in  clients %} 
+									<tr class="success">
+									  <td>{{client.nom}}</td>
+									  <td>{{client.prenom}}</td>
+									  <td>{{client.adresse}}</td>
+                                      <td>{{client.telephone}}</td>
+                                      <td><a href="{% url 'modifier-client' client.id %}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
+                                      <td><a href="{% url 'supprimer-client' client.id %}"><button type="button" class="btn btn-danger">Supprimer</button></a></td>
+									  <td><a href="{% url 'details-client' client.id %}"><button type="button" class="btn btn-dark">Details</button></a></td>
+
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+						{% endblock %}

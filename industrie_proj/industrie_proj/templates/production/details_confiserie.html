@@ -1,0 +1,38 @@
+{%extends 'production/layout.html' %}
+
+    {%block content%}
+    <div class="row">
+        <div class="col-sm-2"></div>
+        
+    
+    <div class="shadow p-4 mb-5 bg-body rounded col-md-8">
+        <center>
+
+           <h1><big><i>Details d'une Confiserie...</i></big></h1>
+        </br>
+        {% comment %} 
+        {% for confiserie in confiserie.confiseries.all %}
+           {{confiserie}}
+        {% endfor %}
+        {% endcomment %}
+        <table class="table table-bordered table-striped table-hover">
+            <tbody>            
+
+                <tr class="success"> 
+                <td><strong>Nom:</strong> {{confiseries.nom}}</td>
+            </tr>
+
+
+                <tr class="success"> 
+                <td><strong>Adresse:</strong> {{confiseries.adresse}}</td>
+            </tr>
+
+            
+            </tbody>
+        </table>
+
+
+        </center>
+    </div>
+    </div> 
+    {%endblock%}

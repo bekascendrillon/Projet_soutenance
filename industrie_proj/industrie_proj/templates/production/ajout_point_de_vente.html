@@ -1,0 +1,26 @@
+{%extends 'production/layout.html' %}
+
+{%block content%}
+<div class="row">
+    <div class="col-sm-2"></div>
+<div class="shadow p-4 mb-5 bg-body rounded col-md-8">
+    <center>
+
+        <big><i><h1>Ajouter un nouveau Point de vente</h1></i></big>
+    </br>
+    {% if submitted %}
+        <big><i><h1>Les Données  ont été ajoutées avec succès...!</h1></i></big>
+    {% else %}
+    <form action="", method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+
+            <div class="d-flex justify-content-end mb-2">
+            <button type="submit" class="btn btn-primary mb-3" value="">Submit</button>
+            </div>
+    </form>
+    {% endif %}
+    </center>
+</div>
+</div> 
+{%endblock%}

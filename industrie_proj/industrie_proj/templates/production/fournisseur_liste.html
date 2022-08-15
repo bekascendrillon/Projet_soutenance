@@ -1,0 +1,34 @@
+{% extends 'production/layout.html' %}
+
+						{% block content %}
+							<center><h1><big><i>Liste des Fournisseurs...</i></big></h1></center>
+                           <div > <a href="{% url 'ajout-fournisseur' %}"><button type="button" class="btn btn-info">Ajouter</button></a></div>
+                        <br>
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Nom</th>
+									  <th>Prenom</th>
+									  <th>Adresse</th>
+                                      <th>Telephone</th>
+                                      <th>Modification</th>
+                                      <th>Suppression</th>
+									  <th>Details</th>
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for fournisseur  in  fournisseurs %} 
+									<tr class="success">
+									  <td>{{fournisseur.nom}}</td>
+									  <td>{{fournisseur.prenom}}</td>
+									  <td>{{fournisseur.adresse}}</td>
+                                      <td>{{fournisseur.telephone}}</td>
+                                      <td><a href="{% url 'modifier-fournisseur' fournisseur.id %}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
+                                      <td><a href="{% url 'supprimer-fournisseur' fournisseur.id %}"><button type="button" class="btn btn-danger">Supprimer</button></a></td>
+									  <td><a href="{% url 'details-fournisseur' fournisseur.id %}"><button type="button" class="btn btn-dark">Details</button></a></td>
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+						{% endblock %}

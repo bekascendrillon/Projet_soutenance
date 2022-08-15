@@ -1,0 +1,45 @@
+{%extends 'production/layout.html' %}
+
+    {%block content%}
+    <div class="row">
+        <div class="col-sm-2"></div>
+        
+    
+    <div class="shadow p-4 mb-5 bg-body rounded col-md-8">
+        <center>
+
+            <h1><big><i>Details d'un Client...</i></big></h1>
+        </br>
+        {% comment %} 
+        {% for client in client.clients.all %}
+           {{client}}
+        {% endfor %}
+        {% endcomment %}
+        <table class="table table-bordered table-striped table-hover">
+            <tbody>            
+
+                <tr class="success"> 
+                <td><strong>Nom:</strong> {{clients.nom}}</td>
+            </tr>
+
+            <tr class="success"> 
+                <td><strong>Prenom:</strong> {{clients.prenom}}</td>
+            </tr>
+
+                <tr class="success"> 
+                <td><strong>Adresse:</strong> {{clients.adresse}}</td>
+            </tr>
+
+                <tr class="success"> 
+                <td><strong>Telephone:</strong> {{clients.telephone}}</td>
+            </tr>
+
+            
+            </tbody>
+        </table>
+
+
+        </center>
+    </div>
+    </div> 
+    {%endblock%}

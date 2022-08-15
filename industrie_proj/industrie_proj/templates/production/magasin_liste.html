@@ -1,0 +1,32 @@
+{% extends 'production/layout.html' %}
+
+						{% block content %}
+							<center><h1><big><i>Liste des Magasins...</i></big></h1></center>
+                           <div > <a href="{% url 'ajout-magasin' %}"><button type="button" class="btn btn-info">Ajouter</button></a></div>
+                        <br>
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Nom</th>
+									  <th>Adresse</th>
+									  <th>Nombre_magasin</th>
+                                      <th>Modification</th>
+                                      <th>Suppression</th>
+									  <th>Details</th>
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for magasin  in  magasins %} 
+									<tr class="success">
+									  <td>{{magasin.nom}}</td>
+									  <td>{{magasin.adresse}}</td>
+									  <td>{{magasin.nombre_magasin}}</td>
+                                      <td><a href="{% url 'modifier-magasin' magasin.id %}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
+                                      <td><a href="{% url 'supprimer-magasin' magasin.id %}"><button type="button" class="btn btn-danger">Supprimer</button></a></td>
+									  <td><a href="{% url 'details-magasin' magasin.id %}"><button type="button" class="btn btn-dark">Details</button></a></td>
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+						{% endblock %}

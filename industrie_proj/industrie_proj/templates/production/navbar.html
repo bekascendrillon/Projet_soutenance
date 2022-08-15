@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 120px;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'Apropos' %}">Royaume Des Douceurs</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Accueil</a>
+          </li>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+              Local
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  
+              <li><a class="dropdown-item" href="{% url 'confiserie-liste' %}">Confiserie</a></li>
+              <li><a class="dropdown-item" href="{% url 'magasin-liste' %}">Magasin</a></li>
+              <li><a class="dropdown-item" href="{% url 'point_de_vente-liste' %}">Point_de_vente</a></li>
+            </ul>
+          </li>
+          
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+              Productions
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  
+              <li><a class="dropdown-item" href="{% url 'matière_première-liste' %}">Matière_première</a></li>
+              <li><a class="dropdown-item" href="{% url 'produit-liste' %}">Produit</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+              Personnes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  
+              <li><a class="dropdown-item" href="{% url 'fabricant-liste' %}">Fabricant</a></li>
+              <li><a class="dropdown-item" href="{% url 'fournisseur-liste' %}">Fournisseur</a></li>
+              <li><a class="dropdown-item" href="{% url 'client-liste' %}">Clients</a></li>
+            </ul>
+          </li>
+           
+        </ul>
+
+        <ul>
+        <form class="d-flex"  action="">
+  
+            {% csrf_token %}
+          <input class="form-control me-2" type="search" placeholder="Recherche" name="recherche" aria-label="Chercher">
+          <button class="btn btn-outline-primary" type="submit">Chercher</button>
+        </ul>
+
+        
+          
+
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  

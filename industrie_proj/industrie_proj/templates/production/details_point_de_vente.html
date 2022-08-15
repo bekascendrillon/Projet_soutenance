@@ -1,0 +1,41 @@
+{%extends 'production/layout.html' %}
+
+{%block content%}
+<div class="row">
+    <div class="col-sm-2"></div>
+    
+    
+<div class="shadow p-4 mb-5 bg-body rounded col-md-8">
+    <center>
+
+        <h1><big><i>Details d'un Point de vente...</i></big></h1>
+    </br>
+    {% comment %} 
+    {% for point_de_vente in point_de_vente.point_de_ventes.all %}
+       {{point_de_vente}}
+    {% endfor %}
+    {% endcomment %}
+    <table class="table table-bordered table-striped table-hover">
+        <tbody>            
+
+            <tr class="success"> 
+            <td><strong>Nom:</strong> {{point_de_ventes.nom}}</td>
+            </tr>
+
+            <tr class="success"> 
+            <td><strong>Adresse:</strong> {{point_de_ventes.adresse}}</td>
+            </tr>
+
+            <tr class="success"> 
+            <td><strong>Nombre_point_de_vente:</strong> {{point_de_ventes.nombre_point_de_vente}}</td>
+            </tr>
+
+            
+        </tbody>
+    </table>
+
+
+    </center>
+</div>
+</div> 
+{%endblock%}

@@ -1,0 +1,34 @@
+{% extends 'production/layout.html' %}
+
+						{% block content %}
+							<center>
+								<h1><big><i>Liste des Points de vente...</i></big></h1>
+							</center>
+                           <div > <a href="{% url 'ajout-point_de_vente' %}"><button type="button" class="btn btn-info">Ajouter</button></a></div>
+                        <br>
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Nom</th>
+									  <th>Adresse</th>
+									  <th>Nombre_point_de_vente</th>
+									  <th>Modification</th>
+									  <th>Suppression</th>
+									  <th>Details</th>
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for point_de_vente  in  point_de_ventes %} 
+									<tr class="success">
+									  <td>{{point_de_vente.nom}}</td>
+									  <td>{{point_de_vente.adresse}}</td>
+									  <td>{{point_de_vente.nombre_point_de_vente}}</td>
+									  <td><a href="{% url 'modifier-point_de_vente' point_de_vente.id %}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
+									  <td><a href="{% url 'supprimer-point_de_vente' point_de_vente.id %}"><button type="button" class="btn btn-danger">Supprimer</button></a></td>
+									  <td><a href="{% url 'details-point_de_vente' point_de_vente.id %}"><button type="button" class="btn btn-dark">Details</button></a></td>
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+						{% endblock %}

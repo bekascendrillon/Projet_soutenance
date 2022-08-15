@@ -1,0 +1,38 @@
+{% extends 'production/layout.html' %}
+
+						{% block content %}	
+							<center>
+								<h1><big><i>Liste des Produits...</i></big></h1>
+							</center>	
+
+                           <div > <a href="{% url 'ajout-produit' %}"><button type="button" class="btn btn-info">Ajouter</button></a></div>
+                        <br>
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Nom</th>
+									  <th>Conditionnement</th>
+									  <th>Quantite</th>
+                                      <th>Modification</th>
+                                      <th>Suppression</th>
+									  <th>Details</th>
+
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for produit  in  produits %} 
+									<tr class="success">
+									  <td>{{produit.nom}}</td>
+									  <td>{{produit.conditionnement}}</td>
+									  <td>{{produit.quantite}}</td>
+                                      <td><a href="{% url 'modifier-produit' produit.id %}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
+                                      <td><a href="{% url 'supprimer-produit' produit.id %}"><button type="button" class="btn btn-danger">Supprimer</button></a></td>
+									  <td><a href="{% url 'details-produit' produit.id %}"><button type="button" class="btn btn-dark">Details</button></a></td>
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+								<img src="static/img/liste_bb.jpg" alt="Bootstrap" class="rounded mx-auto d-block">
+
+						{% endblock %}

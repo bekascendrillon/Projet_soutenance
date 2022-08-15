@@ -1,0 +1,26 @@
+{%extends 'production/layout.html' %}
+
+							{%block content%}
+							<div class="row">
+								<div class="col-sm-2"></div>
+							<div class="shadow p-4 mb-5 bg-body rounded col-md-8">
+								<center>
+
+									<h1><big><i>Modifier les Données de la Confiserie</i></big></h1>
+								</br>
+								{% if submitted %}
+									<h1><big><i>Les Données ont été Modifiées avec succès...!</i></big></h1>
+								{% else %}
+								<form action="", method="POST">
+									{% csrf_token %}
+									{{ form.as_p}}
+
+									  <div class="d-flex justify-content-end mb-2">
+										<button type="submit" class="btn btn-primary mb-3" value="">Submit</button>
+									  </div>
+								</form>
+								{% endif %}
+								</center>
+							</div>
+							</div> 
+							{%endblock%}
